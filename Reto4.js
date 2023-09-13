@@ -1,5 +1,5 @@
 function fitsInOneBox(boxes) {
-  let fallo = 0;
+  let fallo = true;
   boxes.forEach((b, index) => {
     for (let i = 0; i < boxes.length; i++) {
       if (i == index) {
@@ -11,16 +11,12 @@ function fitsInOneBox(boxes) {
         ) {
           continue;
         } else {
-          fallo++;
+          return (fallo = false);
         }
       }
     }
   });
-  if (fallo != 0) {
-    return false;
-  } else {
-    return true;
-  }
+  return fallo;
 }
 
 /* 
