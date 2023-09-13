@@ -5,8 +5,11 @@ function fitsInOneBox(boxes) {
       if (i == index) {
         continue;
       } else {
-        if (boxes[i].l < b.l && boxes[i].w < b.w && boxes[i].h < b.h) {
-        } else if (boxes[i].l > b.l && boxes[i].w > b.w && boxes[i].h > b.h) {
+        if (
+          (boxes[i].l < b.l && boxes[i].w < b.w && boxes[i].h < b.h) ||
+          (boxes[i].l > b.l && boxes[i].w > b.w && boxes[i].h > b.h)
+        ) {
+          continue;
         } else {
           fallo++;
         }
