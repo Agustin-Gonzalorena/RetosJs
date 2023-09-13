@@ -3,6 +3,7 @@ function fitsInOneBox(boxes) {
   boxes.forEach((b, index) => {
     for (let i = 0; i < boxes.length; i++) {
       if (i == index) {
+        continue;
       } else {
         if (boxes[i].l < b.l && boxes[i].w < b.w && boxes[i].h < b.h) {
         } else if (boxes[i].l > b.l && boxes[i].w > b.w && boxes[i].h > b.h) {
